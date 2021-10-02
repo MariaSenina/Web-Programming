@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Form</title>
+</head>
+
+<body>
+  <a href="aboutme.html">About Me</a>
+  <div id="top">
+    <h1>Contact Us</h1>
+    <p>Please complete the informatiion below. Fields marked with <span class="required">*</span> are required fields.</p>
+  </div>
+
+  <div id="data">
+    <form action="mailto:test@email.com?subject=Agreement_Acceptance_Form" method="post" enctype="text/plain">
+      <fieldset>
+        <legend>Your Data</legend>
+        <table>
+          <tr>
+            <th>
+              <label for="first-name">First Name <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="first-name" id="first-name" required aria-required="true">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="last-name">Last Name <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="last-name" id="last-name" required aria-required="true">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="st-adr">Street Address <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="st-adr" id="st-adr" required aria-required="true">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="city">City <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="city" id="city" required aria-required="true">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="province">Province <span class="required">*</span></label>
+            </th>
+            <td>
+              <select name="province" id="province">
+                <option value="AB">AB</option>
+                <option value="BC">BC</option>
+                <option value="MB">MB</option>
+                <option value="NB">NB</option>
+                <option value="NL">NL</option>
+                <option value="NT">NT</option>
+                <option value="NS">NS</option>
+                <option value="NU">NU</option>
+                <option value="ON">ON</option>
+                <option value="PE">PE</option>
+                <option value="QC">QC</option>
+                <option value="SK">SK</option>
+                <option value="YT">YT</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="postal-code">Postal Code <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="postal-code" id="postal-code" required aria-required="true">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="email">Email Address <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required aria-required="true">
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="phone">Phone Number <span class="required">*</span></label>
+            </th>
+            <td>
+              <input type="text" name="phone" id="phone" pattern="[0-9]{10}" required aria-required="true">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <fieldset>
+        <legend>Agreement</legend>
+        <input type="checkbox" name="accepted" id="accepted" required aria-required="true">
+          <label for="accepted">Accept Agreement <span class="required">*</span></label><br>
+        <input type="reset"><input type="submit">
+      </fieldset>
+    </form>
+  </div>
+</body>
