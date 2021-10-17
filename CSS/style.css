@@ -1,12 +1,13 @@
-#top {
-  background-color: #33ff88;
-  margin-top: 15px;
-  padding-top: 10px;
-  border-color: grey;
-  border-width: 2px;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+* {
+  font-family: papyrus, fantasy;
+}
+
+img {
+  border: 3px solid brown;
+}
+
+p {
+  padding-left: 8px;
 }
 
 fieldset {
@@ -38,6 +39,47 @@ td {
   color: #ffa600;
 }
 
-p {
-  padding-left: 8px;
+.button {
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#data {
+  color: #72072e;
+}
+
+#top {
+  background-color: #33ff88;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-color: grey;
+  border-width: 2px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=submit] {
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+}
+
+input[type=reset] {
+  color: black;
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: black;
+  color: #e7e7e7;
+  border: 2px solid #e7e7e7;
 }
