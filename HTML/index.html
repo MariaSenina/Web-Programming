@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JavaScript/script.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    #myInput {
+      background-image: url('../CSS/searchicon.png');
+      background-size: contain;
+      /* background-position: 10px 12px; */
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 50px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #myUL li a {
+      border: 1px solid #ddd;
+      margin-top: -1px;
+      /* Prevent double borders */
+      background-color: #f6f6f6;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block;
+    }
+
+    #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    }
+  </style>
+</head>
+
+<body onload="hideListItems()">
+  <script>
+    addNavBar()
+  </script>
+  <div class="content">
+    <p style="color: red; text-align: right"><b><script>greet()</script></b></p>
+    <h1>Welcome to our website!</h1>
+    <p>You can search our products and services below:</p>
+    <h2>Our Products and Services</h2>
+    <input type="text" id="myInput" onkeyup="myFunction()" oninput="displayListItems()" placeholder="Search for names.." title="Type in a name">
+    <ul id="myUL">
+      <li><a href="#">Web Design</a></li>
+      <li><a href="#">Database Design</a></li>
+      <li><a href="#">Cloud Services</a></li>
+      <li><a href="#">Data Security</a></li>
+      <li><a href="#">Spring</a></li>
+      <li><a href="#">Spring Boot</a></li>
+      <li><a href="#">Java</a></li>
+      <li><a href="#">C++</a></li>
+      <li><a href="#">Visual Basic</a></li>
+      <li><a href="#">React</a></li>
+      <li><a href="#">Angular</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">Vue</a></li>
+      <li><a href="#">JQuery</a></li>
+      <li><a href="#">Bootsrap</a></li>
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">Framework</a></li>
+      <li><a href="#">Hibernate</a></li>
+      <li><a href="#">SQL</a></li>
+      <li><a href="#">Docker</a></li>
+      <li><a href="#">Container</a></li>
+      <li><a href="#">Laptop</a></li>
+      <li><a href="#">Monitor</a></li>
+      <li><a href="#">Mouse</a></li>
+      <li><a href="#">Keyboard</a></li>
+      <li><a href="#">Motherboard</a></li>
+      <li><a href="#">Hard Disk</a></li>
+      <li><a href="#">Linux</a></li>
+      <li><a href="#">Windows</a></li>
+      <li><a href="#">MacOS</a></li>
+      <li><a href="#">Vistual Machine</a></li>
+      <li><a href="#">Ubuntu</a></li>
+      <li><a href="#">Fedora</a></li>
+      <li><a href="#">Red Hat</a></li>
+      <li><a href="#">Amazon</a></li>
+      <li><a href="#">Google</a></li>
+      <li><a href="#">Microsoft</a></li>
+      <li><a href="#">Meta</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">NetBeans</a></li>
+      <li><a href="#">InelliJ</a></li>
+      <li><a href="#">Eclipse</a></li>
+      <li><a href="#">VSCode</a></li>
+      <li><a href="#">Atom</a></li>
+      <li><a href="#">Notepad</a></li>
+      <li><a href="#">Sublime</a></li>
+      <li><a href="#">MariaDB</a></li>
+      <li><a href="#">Cosmos</a></li>
+      <li><a href="#">Git</a></li>
+      <li><a href="#">GitHub</a></li>
+      <li><a href="#">Cassandra</a></li>
+      <li><a href="#">MongoDB</a></li>
+      <li><a href="#">Oracle</a></li>
+    </ul>
+  </div>
+  <script>
+    function hideListItems() {
+      var list = document.getElementById('myUL');
+      list.style.display = 'none';
+    }
+
+    function displayListItems() {
+      var list = document.getElementById('myUL');
+      list.style.display = 'block';
+    }
+
+    function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      if (filter) {
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      } else {
+        hideListItems();
+      }
+    }
+  </script>
+</body>
+
+</html>
