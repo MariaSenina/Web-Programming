@@ -4,7 +4,7 @@ function addNavBar() {
 
   document.write(`
     <div class="navbar">
-      <a class="button" href="../HTML/index.html" style=`+ homeButtonStyle + `>Home</a>
+      <a class="button" href="../php/index.php" style=`+ homeButtonStyle + `>Home</a>
       <div class="dropdown">
         <a class="button">Products &#9660;</a>
         <div class="dropdown-content">
