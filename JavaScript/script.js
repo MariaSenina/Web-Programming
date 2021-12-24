@@ -8,7 +8,7 @@ function addNavBar() {
       <div class="dropdown">
         <a class="button">Products &#9660;</a>
         <div class="dropdown-content">
-          <a href="currency.php">Currency exchange</a>
+          <a href="../php/currency.php">Currency Converter</a>
           <a href="#">Service 2</a>
         </div>
       </div>

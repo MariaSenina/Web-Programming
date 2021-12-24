@@ -69,10 +69,11 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 /* Page styling */
 
 .content {
-  margin: 8px
+  margin: 8px;
 }
 
 * {
@@ -90,15 +91,15 @@ p {
 
 fieldset {
   margin-top: 4px;
-  background-color: #8f8e6e;
+  background-color: #c9cba3;
 }
 
 legend {
-  color: #d46622;
-  background-color: #ccadbe;
+  color: #000000;
+  background-color: #FAC898;
   border-width: 1px;
   border: solid;
-  border-color: #72072e;
+  border-color: #e26d5c;
   padding: 3px;
   font-weight: bold;
 }
@@ -114,7 +115,7 @@ td {
 }
 
 .required {
-  color: #ffa600;
+  color: #fc0000;
 }
 
 .button {
@@ -125,30 +126,30 @@ td {
 }
 
 #data {
-  color: #72072e;
+  color: rgb(0, 0, 0);
 }
 
 #top {
-  background-color: #33ff88;
+  background-color: #e26d5c;
   margin-top: 15px;
   padding-top: 10px;
-  border-color: grey;
-  border-width: 2px;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  color: antiquewhite;
+  text-align: center;
 }
 
 input[type=submit] {
   color: white;
-  background-color: red;
+  background-color: rgb(255, 46, 46);
   cursor: pointer;
 }
 
 input[type=submit]:hover {
   background-color: white;
-  color: red;
-  border: 2px solid red;
+  color: rgb(255, 46, 46);
+  border: 2px solid rgb(255, 46, 46);
 }
 
 input[type=reset] {
