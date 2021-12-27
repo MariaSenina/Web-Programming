@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Home</title>
-  <link rel="stylesheet" href="../css/style.css">	
+  <link rel="stylesheet" href="../css/style.css">
   <script src="../javaScript/script.js"></script>
   <style>
     * {
@@ -45,18 +45,27 @@
       background-color: #eee;
     }
   </style>
+  <?php require("init.php");
+    $servername = "localhost";
+    $username = "<username>";
+    $password = "<password>";
+    $connection = createConnection($servername, $username, $password);
+    createDatabase($connection);
+    createItemsTable($connection);
+    populateItemsTable($connection);
+  ?>
 </head>
 
 <body onload="hideListItems()">
-  <script>	
-    addNavBar()	
+  <script>
+    addNavBar()
   </script>
   <div class="content">
     <h1>Welcome to our website!</h1>
     <p>You can search our products and services below:</p>
     <h2>Our Products and Services</h2>
     <input type="text" id="myInput" onkeyup="myFunction()" oninput="displayListItems()" placeholder="Search for names.." title="Type in a name">
-    
+
     <?php
       class Item {
         public $itemNumber;
@@ -66,33 +75,11 @@
         public $brand;
         public $description;
       }
-        // Use echo to print to the screen the html and table start tags
-        echo "<html><body><center><table id='itemList'>\n\n";
+        $headers = getHeaders();
 
-        // Open csv file
-        $inputFile = fopen("input.csv", "r");
+        $rowLength = getRowLength();
 
-        $counter = 0;
-        // Fetching data from csv file row by row
-        while (($data = fgetcsv($inputFile)) !== false) {
-          echo "<tr>";
-          $rowLength = sizeof($data);
-          for ($i = 0; $i < $rowLength; $i++) {
-            if($counter == 0) {
-              echo "<th>$data[$i]</th>";
-            } else {
-              echo "<td>$data[$i]</td>";
-            }
-          }
-          echo "</tr>";
-          $counter ++;
-        }
-
-        // Close the file
-        fclose($inputFile);
-
-        // Use echo to print to the screen the html and table end tags
-        echo "\n</table></center></body></html>";
+        printValuesFromItemsTable($connection, $headers, $rowLength);
     ?>
   </div>
   <script>
@@ -118,7 +105,7 @@
       if (filter) {
         for (var i = 1; i < rows.length; i++) {
           var row = rows[i].getElementsByTagName("td");
-          
+
           for (var j = 0; j < row.length; j++) {
             data = row[j];
             txtValue = data.textContent || data.innerText;
@@ -139,6 +126,9 @@
       }
     }
   </script>
+  <footer>
+    <?php closeConnection($connection) ?>
+  </footer>
 </body>
 
 </html>
