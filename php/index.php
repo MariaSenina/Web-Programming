@@ -46,13 +46,12 @@
     }
   </style>
   <?php require("init.php");
-    $servername = "localhost";
-    $username = "<username>";
-    $password = "<password>";
+    $servername = getenv("DB_URL");
+    $username = getenv("DB_USER");
+    $password = getenv("DB_PASSWORD");
     $connection = createConnection($servername, $username, $password);
-    createDatabase($connection);
-    createItemsTable($connection);
-    populateItemsTable($connection);
+
+    initializeDatabase($connection);
   ?>
 </head>
 

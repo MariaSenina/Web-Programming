@@ -110,12 +110,34 @@ function populateItemsTable($connection) {
 
         //Verify inserts
         if($connection->query($sql) === FALSE) {
-            echo "An error has occurred when trying to insert records: " . $connection->error . "<br>";
+            console_log("An error has occurred when trying to insert records: " . $connection->error . "<br>");
         }
     }
 
     //Close the .csv file
     fclose($inputFile);
+}
+
+function initializeDatabase($connection) {
+  $dbExists = mysqli_query($connection, "USE assignment8");
+  $tableExists = mysqli_query($connection, "SELECT * FROM assignment8.items LIMIT 1");
+  $noOfItems = mysqli_query($connection, "SELECT * FROM assignment8.items");
+
+  if ($dbExists == FALSE) {
+    createDatabase($connection);
+    console_log("db created");
+  }
+
+  if ($tableExists == FALSE) {
+    createItemsTable($connection);
+    console_log("table created");
+  }
+
+  if (mysqli_num_rows($noOfItems) == 0) {
+    populateItemsTable($connection);
+  } else {
+    console_log("records exist");
+  }
 }
 
 //Populate html table with sql data
