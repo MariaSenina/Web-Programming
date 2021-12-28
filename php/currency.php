@@ -78,7 +78,7 @@
         $from_flag = selectFlag($from_currency);
         $to_flag = selectFlag($to_currency);
         try {
-            echo $from_flag . $from_currency . $amount . " = " . $to_flag . $to_currency . ($amount * $exchangeRate);
+            echo $from_flag . $from_currency . ' ' . $amount . " = " . $to_flag . $to_currency . ' ' . ($amount * $exchangeRate);
         } catch (TypeError $e) {
             echo "<b>Warning: you must enter a number to perform a conversion<b>";
         }
@@ -91,7 +91,7 @@
             switch ($to_currency) {
             case "CAD":
                 $exchangeRate = 1;
-            case "USD": 
+            case "USD":
                 $exchangeRate = 0.79;
                 break;
             case "EUR":
@@ -108,7 +108,7 @@
             switch ($to_currency) {
                 case "USD":
                     $exchangeRate = 1;
-                case "CAD": 
+                case "CAD":
                     $exchangeRate = 1.25;
                     break;
                 case "EUR":
@@ -125,7 +125,7 @@
             switch ($to_currency) {
                 case "EUR":
                     $exchangeRate = 1;
-                case "CAD": 
+                case "CAD":
                     $exchangeRate = 1.43;
                     break;
                 case "USD":
@@ -142,7 +142,7 @@
             switch ($to_currency) {
                 case "GBP":
                     $exchangeRate = 1;
-                case "CAD": 
+                case "CAD":
                     $exchangeRate = 1.68;
                     break;
                 case "USD":
@@ -159,7 +159,7 @@
             switch ($to_currency) {
                 case "CNY":
                     $exchangeRate = 1;
-                case "CAD": 
+                case "CAD":
                     $exchangeRate = 0.19;
                     break;
                 case "USD":
@@ -180,15 +180,15 @@
     function selectFlag($currency) {
         $flag = "#";
         if ($currency == "CAD") {
-            $flag = "<img id='CAD_image' src='ca-flag.jpg' alt='Canadian Flag' style='width: 2%'>";
+            $flag = "<img id='CAD_image' src='../img/ca-flag.jpg' alt='Canadian Flag' style='width: 2%'>";
         } else if ($currency == "USD") {
-            $flag = "<img id='USD_image' src='us-flag.jpg' alt='American Flag' style='width: 2%'>";
+            $flag = "<img id='USD_image' src='../img/us-flag.jpg' alt='American Flag' style='width: 2%'>";
         } else if ($currency == "EUR") {
-            $flag = "<img id='EUR_image' src='germany-flag.jpg' alt='German Flag' style='width: 2%'>";
+            $flag = "<img id='EUR_image' src='../img/germany-flag.jpg' alt='German Flag' style='width: 2%'>";
         } else if ($currency == "GBP") {
-            $flag = "<img id='GBP_image' src='uk-flag.png' alt='Great Britain Flag' style='width: 2%'>";
+            $flag = "<img id='GBP_image' src='../img/uk-flag.png' alt='Great Britain Flag' style='width: 2%'>";
         } else if ($currency == "CNY") {
-            $flag = "<img id='CNY_image' src='china-flag.jpg' alt='Chinese Flag' style='width: 2%'>";
+            $flag = "<img id='CNY_image' src='../img/china-flag.jpg' alt='Chinese Flag' style='width: 2%'>";
         }
 
         return $flag;

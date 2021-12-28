@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>Home</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <script src="../javaScript/script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javaScript/script.js"></script>
   <style>
     * {
       box-sizing: border-box;
     }
 
     #myInput {
-      background-image: url('img/searchicon.png');
+      background-image: url('css/searchicon.png');
       background-size: contain;
       /* background-position: 10px 12px; */
       background-repeat: no-repeat;
@@ -45,7 +45,7 @@
       background-color: #eee;
     }
   </style>
-  <?php require("php/init.php");
+  <?php require("/php/init.php");
     $servername = getenv("DB_URL");
     $username = getenv("DB_USER");
     $password = getenv("DB_PASSWORD");

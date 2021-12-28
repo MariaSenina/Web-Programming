@@ -1,10 +1,10 @@
 function addNavBar() {
-  const homeButtonStyle = `"background-image: url('../CSS/house.png'); background-size: contain; background-repeat: no-repeat;
+  const homeButtonStyle = `"background-image: url('../img/house.png'); background-size: contain; background-repeat: no-repeat;
   font-size: 16px; padding: 12px 20px 12px 60px;"`;
 
   document.write(`
     <div class="navbar">
-      <a class="button" href="../php/index.php" style=`+ homeButtonStyle + `>Home</a>
+      <a class="button" href="../index.php" style=`+ homeButtonStyle + `>Home</a>
       <div class="dropdown">
         <a class="button">Products &#9660;</a>
         <div class="dropdown-content">
@@ -13,13 +13,13 @@ function addNavBar() {
         </div>
       </div>
       <div class="dropdown">
-        <a class="button" href="../HTML/contact.html">Contact Us &#9660;</a>
+        <a class="button" href="../html/contact.html">Contact Us &#9660;</a>
         <div class="dropdown-content">
-          <a href="#">Contactez-nous<img src="../CSS/frenchflag.png" style="height: 20px; position: absolute; margin: 2px;"></a>
-          <a href="#">Cont&aacute;ctenos<img src="../CSS/mexicanflag.png" style="height: 25px; position: absolute;"></a>
+          <a href="#">Contactez-nous<img src="../img/frenchflag.png" style="height: 20px; position: absolute; margin: 2px;"></a>
+          <a href="#">Cont&aacute;ctenos<img src="../img/mexicanflag.png" style="height: 25px; position: absolute;"></a>
         </div>
       </div>
-      <a class="button" href="../HTML/aboutme.html">About</a>
+      <a class="button" href="../html/aboutme.html">About</a>
     </div>
 `);
 }
