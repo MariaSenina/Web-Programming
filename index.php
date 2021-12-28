@@ -12,7 +12,7 @@
     }
 
     #myInput {
-      background-image: url('../CSS/searchicon.png');
+      background-image: url('../css/searchicon.png');
       background-size: contain;
       /* background-position: 10px 12px; */
       background-repeat: no-repeat;
@@ -45,7 +45,7 @@
       background-color: #eee;
     }
   </style>
-  <?php require("init.php");
+  <?php require("php/init.php");
     $servername = getenv("DB_URL");
     $username = getenv("DB_USER");
     $password = getenv("DB_PASSWORD");
