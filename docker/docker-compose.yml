@@ -2,6 +2,7 @@ version: '3.8'
 services:
   php-apache-environment:
     container_name: php-apache
+    restart: always
     build:
       context: ./
       dockerfile: Dockerfile
@@ -13,3 +14,14 @@ services:
       DB_URL: ${DB_URL}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
+  db:
+    container_name: mysql-db
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        MYSQL_DATABASE: ${DB_DATABASE}
+        MYSQL_USER: ${DB_USER}
+        MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+        - "9906:3306"
