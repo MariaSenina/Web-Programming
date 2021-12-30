@@ -11,24 +11,25 @@
 <script>
     addNavBar()
 </script>
+  <div class="content">
     <div id="top">
       <h1>Welcome to Our Currency Converter</h1>
     </div>
     <fieldset>
     <form action="" method="post">
-        <table>
+        <table class="centeredTable">
             <tr>
-                <th>
+                <td>
                     <label for="currency_amount">Amount: </label>
-                </th>
+                </td>
                 <td>
                     <input type="text" name="currency_amount" required aria-required="true">
                 </td>
             </tr>
             <tr>
-                <th>
+                <td>
                     <label for="convert_from">Convert From: </label>
-                </th>
+                </td>
                 <td name="convert_from">
                     <input type="radio" name="from_currency" value="CAD" required aria-required="true">
                         <label for="CAD"><?php echo selectFlag("CAD") ?>CAD</label>
@@ -43,9 +44,9 @@
                 </td>
             </tr>
             <tr>
-                <th>
+                <td>
                     <label for="convert_to">Convert To: </label>
-                </th>
+                </td>
                 <td name="convert_to">
                     <input type="radio" name="to_currency" value="CAD" required aria-required="true">
                         <label for="CAD"><?php echo selectFlag("CAD") ?>CAD</label>
@@ -60,13 +61,14 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <input type="submit" class="button" value="Convert" name="convertSubmit">
                 </td>
             </tr>
         </table>
     </form>
     </fieldset>
+  </div>
 
     <?php
     if (isset($_POST["convertSubmit"])) {
@@ -78,7 +80,9 @@
         $from_flag = selectFlag($from_currency);
         $to_flag = selectFlag($to_currency);
         try {
-            echo $from_flag . $from_currency . ' ' . $amount . " = " . $to_flag . $to_currency . ' ' . ($amount * $exchangeRate);
+            echo "<div class='content' style='text-align: center'>
+                    <p>$from_flag $from_currency $amount = $to_flag $to_currency " . ($amount * $exchangeRate) . "</p>
+                  </div>";
         } catch (TypeError $e) {
             echo "<b>Warning: you must enter a number to perform a conversion<b>";
         }

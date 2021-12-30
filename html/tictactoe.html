@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../javaScript/script.js"></script>
+</head>
+
+<body>
+  <script>
+    addNavBar()
+  </script>
+  <div class="content">
+    <div id="top">
+      <h1>Tic-Tac-Toe Game Demo</h1>
+      <p>Welcome to our tic-tac-toe game demo, if you'd like to run the game on your computer please follow the instructions at the bottom of the page</p>
+    </div>
+    <fieldset>
+      <table style="font-weight: bold;" class="centeredTable">
+        <tr>
+          <td>Choose your stating side!</td>
+          <td>Get notified who won each round!</td>
+        </tr>
+        <tr>
+          <td><img src="../img/main-page.png" alt="Main game page" name="ain-page" id="image"></td>
+          <td><img src="../img/x-won.png" alt="Screenshot of 'x' winning" name="x-wins" id="image"></td>
+        </tr>
+        <tr>
+          <td>Get notified when there is a tie!</td>
+          <td>View latest scores!</td>
+        </tr>
+        <tr>
+          <td><img src="../img/draw.png" alt="Screenshot of draw condition" name="draw" id="image"></td>
+          <td><img src="../img/match-history.png" alt="Match history example" name="match-history" id="image"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h3>How to run the Tic-tac-toe application:</h3>
+            <ul style="list-style-position: inside">
+              <li>Build the project with the following Maven command: mvn clean install</li>
+              <li>Run the jar in the target folder: java -jar tic-tac-toe-1.0-SNAPSHOT.jar</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Get Tic-Tac-Toe" class="button" onclick="window.location.href='https://github.com/MariaSenina/TicTacToe-App'">
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+  </div>
+</body>
+
+</html>

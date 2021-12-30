@@ -76,6 +76,12 @@
   margin: 8px;
 }
 
+.centeredTable {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 * {
   font-family: papyrus, fantasy;
   margin: 0px;
@@ -83,6 +89,12 @@
 
 #aboutImage {
   border: 3px solid brown;
+}
+
+#image {
+  border-width: 1px;
+  border: solid;
+  border-color: #e26d5c;
 }
 
 p {
