@@ -76,7 +76,7 @@
         $from_currency = $_POST["from_currency"];
         $to_currency = $_POST["to_currency"];
 
-        $exchangeRate = convertCurrency($amount, $from_currency, $to_currency);
+        $exchangeRate = getExchangeRate($amount, $from_currency, $to_currency);
         $from_flag = selectFlag($from_currency);
         $to_flag = selectFlag($to_currency);
         try {
@@ -88,7 +88,7 @@
         }
     }
 
-    function convertCurrency(&$amount, $from_currency, $to_currency) {
+    function getExchangeRate(&$amount, $from_currency, $to_currency) {
         $exchangeRate = 0;
 
         if ($from_currency == $to_currency) {
