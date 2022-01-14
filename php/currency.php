@@ -91,10 +91,10 @@
     function convertCurrency(&$amount, $from_currency, $to_currency) {
         $exchangeRate = 0;
 
-        if ($from_currency == "CAD") {
+        if ($from_currency == $to_currency) {
+          $exchangeRate = 1;
+        } elseif ($from_currency == "CAD") {
             switch ($to_currency) {
-            case "CAD":
-                $exchangeRate = 1;
             case "USD":
                 $exchangeRate = 0.79;
                 break;
@@ -110,8 +110,6 @@
             }
         } elseif ($from_currency == "USD") {
             switch ($to_currency) {
-                case "USD":
-                    $exchangeRate = 1;
                 case "CAD":
                     $exchangeRate = 1.25;
                     break;
@@ -127,8 +125,6 @@
             }
         } elseif ($from_currency == "EUR") {
             switch ($to_currency) {
-                case "EUR":
-                    $exchangeRate = 1;
                 case "CAD":
                     $exchangeRate = 1.43;
                     break;
@@ -144,8 +140,6 @@
             }
         } elseif ($from_currency == "GBP") {
             switch ($to_currency) {
-                case "GBP":
-                    $exchangeRate = 1;
                 case "CAD":
                     $exchangeRate = 1.68;
                     break;
@@ -161,8 +155,6 @@
             }
         } elseif ($from_currency == "CNY") {
             switch ($to_currency) {
-                case "CNY":
-                    $exchangeRate = 1;
                 case "CAD":
                     $exchangeRate = 0.19;
                     break;
