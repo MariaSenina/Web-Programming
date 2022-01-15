@@ -15,59 +15,61 @@
     <div id="top">
       <h1>Welcome to Our Currency Converter</h1>
     </div>
-    <fieldset>
-    <form action="" method="post">
-        <table class="centeredTable">
-            <tr>
-                <td>
-                    <label for="currency_amount">Amount: </label>
-                </td>
-                <td>
-                    <input type="text" name="currency_amount" required aria-required="true">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="convert_from">Convert From: </label>
-                </td>
-                <td name="convert_from">
-                    <input type="radio" name="from_currency" value="CAD" required aria-required="true">
-                        <label for="CAD"><?php echo selectFlag("CAD") ?>CAD</label>
-                    <input type="radio" name="from_currency" value="USD" required aria-required="true">
-                        <label for="USD"><?php echo selectFlag("USD") ?>USD</label>
-                    <input type="radio" name="from_currency" value="EUR" required aria-required="true">
-                        <label for="EUR"><?php echo selectFlag("EUR") ?>EUR</label>
-                    <input type="radio" name="from_currency" value="GBP" required aria-required="true">
-                        <label for="GBP"><?php echo selectFlag("GBP") ?>GBP</label>
-                    <input type="radio" name="from_currency" value="CNY" required aria-required="true">
-                        <label for="CNY"><?php echo selectFlag("CNY") ?>CNY</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="convert_to">Convert To: </label>
-                </td>
-                <td name="convert_to">
-                    <input type="radio" name="to_currency" value="CAD" required aria-required="true">
-                        <label for="CAD"><?php echo selectFlag("CAD") ?>CAD</label>
-                    <input type="radio" name="to_currency"value="USD" required aria-required="true">
-                        <label for="USD"><?php echo selectFlag("USD") ?>USD</label>
-                    <input type="radio" name="to_currency"value="EUR" required aria-required="true">
-                        <label for="EUR"><?php echo selectFlag("EUR") ?>EUR</label>
-                    <input type="radio" name="to_currency" value="GBP" required aria-required="true">
-                        <label for="GBP"><?php echo selectFlag("GBP") ?>GBP</label>
-                    <input type="radio" name="to_currency" value="CNY" required aria-required="true">
-                        <label for="CNY"><?php echo selectFlag("CNY") ?>CNY</label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" class="button" value="Convert" name="convertSubmit">
-                </td>
-            </tr>
-        </table>
-    </form>
-    </fieldset>
+    <div id="data" class="currency-data">
+      <fieldset>
+      <form action="" method="post">
+          <table class="centeredTable">
+              <tr>
+                  <td>
+                      <label for="currency_amount">Amount: </label>
+                  </td>
+                  <td>
+                      <input type="text" name="currency_amount" required aria-required="true">
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="convert_from">Convert From: </label>
+                  </td>
+                  <td name="convert_from">
+                      <input type="radio" name="from_currency" value="CAD" required aria-required="true">
+                          <label for="CAD"><?php echo selectFlag("CAD") ?>CAD</label>
+                      <input type="radio" name="from_currency" value="USD" required aria-required="true">
+                          <label for="USD"><?php echo selectFlag("USD") ?>USD</label>
+                      <input type="radio" name="from_currency" value="EUR" required aria-required="true">
+                          <label for="EUR"><?php echo selectFlag("EUR") ?>EUR</label>
+                      <input type="radio" name="from_currency" value="GBP" required aria-required="true">
+                          <label for="GBP"><?php echo selectFlag("GBP") ?>GBP</label>
+                      <input type="radio" name="from_currency" value="CNY" required aria-required="true">
+                          <label for="CNY"><?php echo selectFlag("CNY") ?>CNY</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="convert_to">Convert To: </label>
+                  </td>
+                  <td name="convert_to">
+                      <input type="radio" name="to_currency" value="CAD" required aria-required="true">
+                          <label for="CAD"><?php echo selectFlag("CAD") ?>CAD</label>
+                      <input type="radio" name="to_currency"value="USD" required aria-required="true">
+                          <label for="USD"><?php echo selectFlag("USD") ?>USD</label>
+                      <input type="radio" name="to_currency"value="EUR" required aria-required="true">
+                          <label for="EUR"><?php echo selectFlag("EUR") ?>EUR</label>
+                      <input type="radio" name="to_currency" value="GBP" required aria-required="true">
+                          <label for="GBP"><?php echo selectFlag("GBP") ?>GBP</label>
+                      <input type="radio" name="to_currency" value="CNY" required aria-required="true">
+                          <label for="CNY"><?php echo selectFlag("CNY") ?>CNY</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                      <input type="submit" class="button" value="Convert" name="convertSubmit">
+                  </td>
+              </tr>
+          </table>
+      </form>
+      </fieldset>
+    </div>
   </div>
 
     <?php
@@ -76,7 +78,7 @@
         $from_currency = $_POST["from_currency"];
         $to_currency = $_POST["to_currency"];
 
-        $exchangeRate = convertCurrency($amount, $from_currency, $to_currency);
+        $exchangeRate = getExchangeRate($amount, $from_currency, $to_currency);
         $from_flag = selectFlag($from_currency);
         $to_flag = selectFlag($to_currency);
         try {
@@ -88,7 +90,7 @@
         }
     }
 
-    function convertCurrency(&$amount, $from_currency, $to_currency) {
+    function getExchangeRate(&$amount, $from_currency, $to_currency) {
         $exchangeRate = 0;
 
         if ($from_currency == $to_currency) {

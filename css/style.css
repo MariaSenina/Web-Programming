@@ -22,7 +22,7 @@
 }
 
 .navbar [class=button]:hover {
-  background-color: white;
+  background-color: antiquewhite;
   cursor: pointer;
 }
 
@@ -85,6 +85,7 @@
 * {
   font-family: papyrus, fantasy;
   margin: 0px;
+  background-color: antiquewhite;
 }
 
 #aboutImage {
@@ -97,8 +98,21 @@
   border-color: #e26d5c;
 }
 
-p {
-  padding-left: 8px;
+h1, h2, h3 {
+  margin: 10px;
+}
+
+.about-me-separator {
+  height:2px;
+  border-width:0;
+  color:red;
+  background-color:brown;
+  width: 50%;
+  margin: auto;
+}
+
+footer {
+  margin: 8px;
 }
 
 fieldset {
@@ -107,7 +121,6 @@ fieldset {
 }
 
 legend {
-  color: #000000;
   background-color: #FAC898;
   border-width: 1px;
   border: solid;
@@ -116,8 +129,20 @@ legend {
   font-weight: bold;
 }
 
+.currency-data form {
+  background-color: #c9cba3;
+}
+
+.tic-tac-toe-demo h3, .tic-tac-toe-demo ul, .tic-tac-toe-demo li {
+  background-color: #c9cba3;
+}
+
+#data table, #data td, #data th, #data label, #data span {
+  background-color: #c9cba3;
+}
+
 table {
-  width: 80%;
+  width: 60%;
   margin: 4px;
   padding: 4px;
 }
@@ -141,7 +166,7 @@ td {
   color: rgb(0, 0, 0);
 }
 
-#top {
+#top, #top p, #top h1, #top span {
   background-color: #e26d5c;
   margin-top: 15px;
   padding-top: 10px;
@@ -153,13 +178,13 @@ td {
 }
 
 input[type=submit] {
-  color: white;
+  color: #fffaf1;
   background-color: rgb(255, 46, 46);
   cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: white;
+  background-color: #fffaf1;
   color: rgb(255, 46, 46);
   border: 2px solid rgb(255, 46, 46);
 }
