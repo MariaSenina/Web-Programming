@@ -9,7 +9,7 @@ function addNavBar() {
         <a class="button">Products &#9660;</a>
         <div class="dropdown-content">
           <a href="../php/currency.php">Currency Converter</a>
-          <a href="#">Service 2</a>
+          <a href="#">Coming soon!</a>
         </div>
       </div>
       <div class="dropdown">
@@ -31,11 +31,11 @@ function greet() {
     document.write(`Good morning, you must be an early bird!`);
   } else if ( ( (D.getHours() == 6 && D.getMinutes() > 0) || (D.getHours() > 6) ) &&
                 (D.getHours() < 12 || (D.getHours() == 12 && D.getMinutes() == 0) ) ) {
-      document.write(`Good morning`);
+      document.write(`Good morning!`);
   } else if ( ( (D.getHours() == 12 && D.getMinutes() > 0) || (D.getHours() > 12) ) &&
                 (D.getHours() < 18 || (D.getHours() == 18 && D.getMinutes() == 0) ) ) {
-      document.write(`Good afternoon`);
+      document.write(`Good afternoon!`);
   } else {
-    document.write(`Good evening`);
+    document.write(`Good evening!`);
   }
 }

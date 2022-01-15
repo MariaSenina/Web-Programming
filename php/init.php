@@ -145,7 +145,7 @@ function printValuesFromItemsTable($connection, $headers, $rowLength) {
     $result = mysqli_query($connection,"SELECT * FROM assignment8.items;");
 
     if (mysqli_num_rows($result) > 0) {
-        echo "<html><body><center><table id='itemList'>\n\n";
+        echo "<html><body><center><table id='itemList' class='centeredTable'>\n\n";
 
         echo "<tr>";
         for ($i = 0; $i<$rowLength-1; $i++) {

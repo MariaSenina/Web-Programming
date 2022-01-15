@@ -14,13 +14,13 @@
     #myInput {
       background-image: url('img/searchicon.png');
       background-size: contain;
-      /* background-position: 10px 12px; */
       background-repeat: no-repeat;
-      width: 100%;
+      width: 50%;
       font-size: 16px;
       padding: 12px 20px 12px 50px;
       border: 1px solid #ddd;
       margin-bottom: 12px;
+      border-color: #e26d5c;
     }
 
     #myUL {
@@ -59,7 +59,8 @@
   <script>
     addNavBar()
   </script>
-  <div class="content">
+  <div class="content" style="text-align: center">
+    <h3 style="color: red"><script>greet()</script></h3>
     <h1>Welcome to our website!</h1>
     <p>You can search our products and services below:</p>
     <h2>Our Products and Services</h2>
@@ -84,12 +85,12 @@
   <script>
     function hideListItems() {
       var list = document.getElementById('itemList');
-      list.style.display = 'none';
+      list.style.visibility = 'hidden';
     }
 
     function displayListItems() {
       var list = document.getElementById('itemList');
-      list.style.display = 'block';
+      list.style.visibility = 'visible';
     }
 
     function myFunction() {
